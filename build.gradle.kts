@@ -5,6 +5,7 @@ plugins {
     id("org.springframework.boot") version "2.5.1" apply false
     id("io.spring.dependency-management") version "1.0.11.RELEASE" apply false
     kotlin("plugin.spring") version "1.6.21" apply false
+    kotlin("plugin.jpa") version "1.6.21" apply false
 }
 val jar: Jar by tasks
 
@@ -36,10 +37,11 @@ subprojects {
         plugin("org.springframework.boot")
         plugin("org.jetbrains.kotlin.plugin.spring")
         plugin("io.spring.dependency-management")
+        plugin("org.jetbrains.kotlin.plugin.jpa")
     }
 
     dependencies {
-//        implementation("org.springframework.boot:spring-boot-starter-data-jpa")
+        implementation("org.springframework.boot:spring-boot-starter-data-jpa")
         implementation("org.springframework.boot:spring-boot-starter-logging")
 
         implementation("org.springframework.boot:spring-boot-starter-web")
@@ -48,6 +50,8 @@ subprojects {
         implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8")
 
         testImplementation("org.springframework.boot:spring-boot-starter-test")
+
+        implementation("com.h2database:h2")
     }
 
     tasks.withType<KotlinCompile> {
