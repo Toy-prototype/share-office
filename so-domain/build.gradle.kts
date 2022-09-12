@@ -5,4 +5,5 @@ jar.enabled = true
 jar.archiveClassifier.convention("")
 
 dependencies {
+    implementation(project(":so-application"))
 }
