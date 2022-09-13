@@ -12,15 +12,9 @@ class Group(
 ) : CommonTimeEntity() {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "GROUP_ID")
     var id: Long? = null
 
-//    @BatchSize(size = 100)
-//    @OneToMany(mappedBy = "group", cascade = [CascadeType.ALL], fetch = FetchType.LAZY)
-//    var teams: List<Team>? = null
-
-
-    fun invite(){
-
-    }
+    fun invite(){}
 
 }

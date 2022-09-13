@@ -1,6 +1,5 @@
 package com.dev.domain.user.repository
 
-import com.dev.ShareOfficeApplication
 import com.dev.domain.config.TestDBConfig
 import com.dev.domain.user.Member
 import com.dev.domain.user.PositionType
@@ -22,7 +21,7 @@ class MemberRepositoryTest(
 ) {
 
     @Test
-    fun member_test() {
+    fun member_entity_test() {
         memberRepository.save(Member("양재우",20,PositionType.BACKEND_DEV))
         val members = memberRepository.findAll()
         MatcherAssert.assertThat("양재우", Matchers.equalTo(members[0].name))

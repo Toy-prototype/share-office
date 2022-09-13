@@ -13,11 +13,12 @@ class Team(
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "TEAM_ID")
     var id: Long? = null
 
-//    @BatchSize(size = 100)
-//    @OneToMany(mappedBy = "team", cascade = [CascadeType.ALL], fetch = FetchType.LAZY)
-//    var coworkers: List<Coworker>? = null
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "GROUP_ID")
+    var group: Group? = null
 
     fun invite(){
     }
