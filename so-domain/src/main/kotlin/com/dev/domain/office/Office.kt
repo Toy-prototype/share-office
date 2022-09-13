@@ -2,6 +2,7 @@ package com.dev.domain.office
 
 import com.dev.domain.common.Address
 import com.dev.domain.common.CommonTimeEntity
+import com.dev.domain.reservation.Reservation
 import java.math.BigDecimal
 import javax.persistence.*
 
@@ -27,5 +28,10 @@ class Office(
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "OFFICE_ID")
     var id: Long? = null
+
+//    @ManyToOne()
+//    @JoinColumn(name = "RESERVATION_ID")
+//    var reservation : Reservation? = null
 }

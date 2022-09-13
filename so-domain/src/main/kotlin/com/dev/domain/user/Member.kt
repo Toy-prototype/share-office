@@ -1,6 +1,7 @@
 package com.dev.domain.user
 
 import com.dev.domain.common.CommonTimeEntity
+import com.dev.domain.group.Team
 import javax.persistence.*
 
 @Entity
@@ -16,5 +17,10 @@ class Member(
 ) : CommonTimeEntity(){
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "MEMBER_ID")
     var id: Long? = null
+
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "TEAM_ID")
+    var team : Team? = null
 }
